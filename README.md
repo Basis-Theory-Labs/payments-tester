@@ -1,8 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Payments Tester
 
 ## Getting Started
 
-First, run the development server:
+### Vendor Setup
+
+First, create a `.env` file at the project root following the `.env.example`. Fill it out with your vendor keys.
+
+> Some vendors require enabling APIs to receive card data from an external vault.
+
+#### Basis Theory
+
+[Click here](https://portal.basistheory.com/applications/create?name=Frontend&permissions=token-intent%3Acreate&permissions=3ds%3Asession%3Acreate&type=public) to create a Public Application Key with the following permissions:
+- `token-intent:create`
+- `3ds:session:create`
+
+
+[Click here](https://portal.basistheory.com/applications/create?name=Backend&permissions=token%3Acreate&permissions=token%3Ause&permissions=3ds%3Asession%3Aread&permissions=3ds%3Asession%3Aauthenticate) to create a Private Application Key with the following permissions:
+- `token:create`
+- `token:use`
+- `3ds:session:read`
+- `3ds:session:authenticate`
+
+### Running the app
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +37,14 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Testing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3D Secure
 
-## Learn More
+Use [Basis Theory 3DS test cards](https://developers.basistheory.com/docs/api/testing#3ds-test-cards) to test specific 3DS scenarios.
 
-To learn more about Next.js, take a look at the following resources:
+Prefer using **Checkout** as Verification and Transaction vendor because of its flexible sandbox.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Authorization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Use vendor-specific test cards for Verification and Transaction authorization.

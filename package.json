@@ -1,5 +1,5 @@
 {
-  "name": "super-demo",
+  "name": "payments-tester",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,17 +9,37 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@basis-theory/basis-theory-react": "^1.31.0",
+    "@basis-theory/node-sdk": "^1.5.2",
+    "@basis-theory/web-threeds": "^1.0.0",
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@fontsource/roboto": "^5.1.1",
+    "@mui/icons-material": "^6.4.3",
+    "@mui/material": "^6.4.3",
+    "@mui/material-nextjs": "^6.4.3",
+    "axios": "^1.7.9",
+    "console-feed": "^3.8.0",
+    "next": "15.1.6",
+    "node-fetch": "^3.3.2",
+    "qs": "^6.14.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.6"
+    "rxdb": "^16.6.1",
+    "rxjs": "^7.8.1",
+    "swr": "^2.3.2",
+    "uuid": "^11.0.5",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
-    "@eslint/eslintrc": "^3"
+    "prettier": "^3.5.0",
+    "typescript": "^5"
   }
 }
